@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row pt-3">
+
+		<h1><%= @question.title %></h1>
+
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1">
+				<a href="#">
+					<span class="oi oi-caret-top"></span>
+				</a>
+				<p>[num_votos]</p>
+		</div>
+		<div class="col-sm-11">
+				<p><%= @question.description %></p>
+		</div>
+	</div>
+</div>

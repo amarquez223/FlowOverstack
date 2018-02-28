@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: acomments
+#
+#  id         :integer          not null, primary key
+#  acomment   :text
+#  answer_id  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  acomment: MyText
+  answer: one
+
+two:
+  acomment: MyText
+  answer: two

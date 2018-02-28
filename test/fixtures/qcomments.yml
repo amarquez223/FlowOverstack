@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: qcomments
+#
+#  id          :integer          not null, primary key
+#  qcomment    :text
+#  question_id :integer
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qcomment: MyText
+  question: one
+  user: one
+
+two:
+  qcomment: MyText
+  question: two
+  user: two
