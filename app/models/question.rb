@@ -18,4 +18,8 @@ class Question < ApplicationRecord
   has_many :qcomments
 
   validates :title, :description, presence: true
+
+  def qvoted_by?(user)
+  	qvotes.exists?(user: user)
+  end
 end

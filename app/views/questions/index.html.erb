@@ -5,11 +5,11 @@
 				<% @questions.each do |q| %>
 					<tr>
 						<td>
-							<h4>[num_votos]</h4>
+							<h4><%= q.qvotes.count %></h4>
 							<p>Votos</p>
 						</td>
 						<td>
-							<h4>[num_rptas]</h4>
+							<h4><%= q.answers.count %></h4>
 							<p>Respuestas</p>
 						</td>
 						<td>

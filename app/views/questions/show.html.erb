@@ -9,10 +9,22 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-1">
-				<a href="#">
-					<span class="oi oi-caret-top"></span>
-				</a>
-				<p>[num_votos]</p>
+			<% if user_signed_in? %>
+				<% if @question.qvoted_by? current_user %>
+					<%= link_to question_qvote_path(@question.id), method: :delete do %>
+						<span class="oi oi-caret-top"></span>
+						<h4><%= @question.qvotes.count %></h4>	
+					<% end %>
+				<% else %>
+					<%= link_to question_qvote_path(@question.id), method: :post do %>
+						<span class="oi oi-caret-top"></span>
+						<h4><%= @question.qvotes.count %></h4>	
+					<% end %>
+				<% end %>
+			<% else %>
+				<span class="oi oi-caret-top"></span>
+				<h4><%= @question.qvotes.count %></h4>
+			<% end %>
 		</div>
 		<div class="col-sm-11">
 				<p><%= @question.description %></p>
