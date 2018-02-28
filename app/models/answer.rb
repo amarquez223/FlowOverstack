@@ -16,4 +16,6 @@ class Answer < ApplicationRecord
 
   has_many :acomments
   has_many :avotes
+
+  validates :answertext, presence: true
 end

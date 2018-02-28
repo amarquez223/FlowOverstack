@@ -11,4 +11,6 @@
 
 class Acomment < ApplicationRecord
   belongs_to :answer
+
+  validates :acomment, presence: true
 end
