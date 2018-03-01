@@ -18,4 +18,9 @@ class Answer < ApplicationRecord
   has_many :avotes
 
   validates :answertext, presence: true
+
+  def avoted_by?(user)
+    	avotes.exists?(user: user)
+    end
+
 end
