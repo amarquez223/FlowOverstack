@@ -27,7 +27,35 @@
 			<% end %>
 		</div>
 		<div class="col-sm-11">
-				<p><%= @question.description %></p>
+			<h6><%= @question.description %></h6>
 		</div>
 	</div>
 </div>
+
+<div class="container">
+	<div class="row m-1">
+		<div class="col-sm-10 offset-sm-1">
+			<% @question.qcomments.each do |q| %>
+				<h6 class="border border-right-0 border-left-0 border-bottom-0"><small><%= q.qcomment %></small></h6>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<% if user_signed_in? %>
+<div class="container">
+	<div class="row m-1">
+		<div class="col-sm-10 offset-sm-1">
+			<%= form_for [@question, @question.qcomments.build] do |f| %>
+				<div class="form-group">
+		    		<%= f.text_area :qcomment, class: "form-control input-lg", placeholder: "Haz tu comentario" %>
+		    	</div>
+			
+			  	<div class="col-sm-1 offset-sm-10">
+			  	  <%= f.submit "Comentar", class: "btn btn-primary" %>
+			  	</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<% end %>

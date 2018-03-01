@@ -1,6 +1,16 @@
 <div class="container">
-	<div class="row pt-3">
+	<div class="row pt-3 justify-content-between">
+		<div class="col-sm-3">
 			<h1>Preguntas</h1>
+		</div>
+		<div class="col-sm-3 align-self-end">
+			<button type="button" class="btn btn-link"><%= link_to "Hacer una Pregunta", new_question_path %></button>
+		</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row pt-3">
 			<table class="table">
 				<% @questions.each do |q| %>
 					<tr>
