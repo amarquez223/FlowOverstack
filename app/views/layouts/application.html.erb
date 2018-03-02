@@ -30,9 +30,9 @@
   	    	    <li class="nav-item active"><a href="#"><%= link_to "Registrarse", new_user_registration_path, class: "nav-link" %></a></li>
   	    	<% end %>	
   	    </ul>
-  	    <form class="form-inline my-2 my-lg-0">
-  	      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-  	    </form>
+        <%= form_tag questions_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search]? params[:search] : nil, placeholder: "Buscar preguntas" %>
+        <% end %>
   	  </div>
   	</nav>  
 

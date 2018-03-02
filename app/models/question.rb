@@ -22,4 +22,12 @@ class Question < ApplicationRecord
   def qvoted_by?(user)
   	qvotes.exists?(user: user)
   end
+
+  def self.search(search)
+	  if search
+	  	Question.where("title like ? OR description like ?", "%#{search}%", "%#{search}%").order(created_at: :desc)
+	  else	
+	  	Question.all.order(created_at: :desc)
+	  end
+  end
 end
