@@ -23,7 +23,7 @@
 							<p>Respuestas</p>
 						</td>
 						<td>
-							<h4><%= link_to q.title, question_path(q.id), class: "titulo" %></h4>
+							<h4><%= link_to markdown(q.title), question_path(q.id), class: "titulo" %></h4>
 							<p>Preguntó <%= q.user.email %> hace <%= time_ago(q.created_at) %></p>
 						</td>
 					</tr>
