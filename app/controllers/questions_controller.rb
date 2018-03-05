@@ -1,11 +1,7 @@
 class QuestionsController < ApplicationController
 
 	def index
-		if params[:search]
-			@questions = Question.where("title like ? OR description like ?", "%#{params[:search]}%", "%#{params[:search]}%").order(created_at: :desc)
-		else	
-			@questions = Question.all.order(created_at: :desc)
-		end
+		@questions = Question.search(params[:search])
 	end
 
 	def show 

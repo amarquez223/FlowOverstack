@@ -4,6 +4,7 @@ class QvotesController < ApplicationController
 		question = Question.find(params[:question_id])
 		question.qvotes.create(user: current_user)
 
+		#redirect_to question_path(question.id)
 		redirect_to question_path(question.id)
 	end
 

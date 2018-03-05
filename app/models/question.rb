@@ -16,6 +16,7 @@ class Question < ApplicationRecord
   has_many :qvotes
   has_many :answers
   has_many :qcomments
+  has_many :comments, as: :commentable
 
   validates :title, :description, presence: true
 

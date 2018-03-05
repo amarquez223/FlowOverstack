@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228150507) do
+ActiveRecord::Schema.define(version: 20180302201538) do
 
   create_table "acomments", force: :cascade do |t|
     t.text "acomment"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20180228150507) do
     t.datetime "updated_at", null: false
     t.index ["answer_id"], name: "index_avotes_on_answer_id"
     t.index ["user_id"], name: "index_avotes_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.string "commentable_type"
+    t.integer "commentable_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "qcomments", force: :cascade do |t|

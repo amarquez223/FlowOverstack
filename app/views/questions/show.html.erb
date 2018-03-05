@@ -37,8 +37,8 @@
 <div class="container">
 	<div class="row m-1">
 		<div class="col-sm-10 offset-sm-1">
-			<% @question.qcomments.each do |q| %>
-				<h6 class="border border-right-0 border-left-0 border-bottom-0"><small><%= q.qcomment %></small></h6>
+			<% @question.comments.each do |q| %>
+				<h6 class="border border-right-0 border-left-0 border-bottom-0"><small><%= q.comment %></small></h6>
 			<% end %>
 		</div>
 	</div>
@@ -49,9 +49,9 @@
 	<div class="container">
 		<div class="row m-1">
 			<div class="col-sm-10 offset-sm-1">
-				<%= form_for [@question, @question.qcomments.build] do |f| %>
+				<%= form_for [@question, @question.comments.build] do |f| %>
 					<div class="form-group">
-			    		<%= f.text_area :qcomment, class: "form-control input-lg", placeholder: "Agrega un comentario a la Pregunta" %>
+			    		<%= f.text_area :comment, class: "form-control input-lg", placeholder: "Agrega un comentario a la Pregunta" %>
 			    	</div>
 				
 				  	<div class="col-sm-1 offset-sm-10">
@@ -98,8 +98,8 @@
 			</div>
 			<!-- Comentarios de la Respuesta -->
 			<div class="col-sm-10 offset-sm-2">
-				<% a.acomments.each do |ac| %>
-					<h6 class="border border-right-0 border-left-0 border-bottom-0"><small><%= ac.acomment %></small></h6>
+				<% a.comments.each do |ac| %>
+					<h6 class="border border-right-0 border-left-0 border-bottom-0"><small><%= ac.comment %></small></h6>
 				<% end %>
 			</div>
 			<!-- Input para adicionar comentarios a la Respuesta (solo si hay usuario logeado) -->
@@ -107,9 +107,9 @@
 				<div class="container">
 					<div class="row m-1">
 						<div class="col-sm-9 offset-sm-2">
-							<%= form_for [a, a.acomments.build] do |f| %>
+							<%= form_for [a, a.comments.build] do |f| %>
 								<div class="form-group">
-						    		<%= f.text_area :acomment, class: "form-control input-lg", placeholder: "Agrega un comentario a la Respuesta" %>
+						    		<%= f.text_area :comment, class: "form-control input-lg", placeholder: "Agrega un comentario a la Respuesta" %>
 						    	</div>
 							
 							  	<div class="col-sm-1 offset-sm-10">

@@ -15,6 +15,7 @@ class Answer < ApplicationRecord
   belongs_to :user
 
   has_many :acomments
+  has_many :comments, as: :commentable
   has_many :avotes
 
   validates :answertext, presence: true
