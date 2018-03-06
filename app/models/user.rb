@@ -29,4 +29,6 @@ class User < ApplicationRecord
   has_many :answers
   has_many :qcomments
   has_many :avotes
+
+  validates :email,  :uniqueness => true, :format => {:with => /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/}
 end

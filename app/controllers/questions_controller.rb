@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
 	def create
 		@question = Question.new(question_params)
 		if @question.save
-			redirect_to questions_path, notice: "La pregunta fue adicionada correctamente"
+			redirect_to question_path(@question.id), notice: "La pregunta fue adicionada correctamente"
 		else
 			render :new
 		end
