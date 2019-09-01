@@ -4,7 +4,7 @@
 			<h1>Preguntas</h1>
 		</div>
 		<div class="col-sm-3 align-self-end">
-			<button type="button" class="btn btn-link"><%= link_to "Hacer una Pregunta", new_question_path %></button>
+			<%= button_to "Hacer una Pregunta", new_question_path, class: "btn btn-primary", method: :get %>
 		</div>
 		</div>
 	</div>

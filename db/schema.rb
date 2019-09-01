@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180302201538) do
 
-  create_table "acomments", force: :cascade do |t|
-    t.text "acomment"
-    t.integer "answer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_acomments_on_answer_id"
-  end
-
   create_table "answers", force: :cascade do |t|
     t.text "answertext"
     t.integer "question_id"
@@ -47,16 +39,6 @@ ActiveRecord::Schema.define(version: 20180302201538) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "qcomments", force: :cascade do |t|
-    t.text "qcomment"
-    t.integer "question_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_qcomments_on_question_id"
-    t.index ["user_id"], name: "index_qcomments_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
